@@ -11,10 +11,10 @@ $(NAME): clean
 	cp -r $(SRCDIR)/$(THEMENAME)-*/ $(OUTDIR)/$(NAME)/
 
 install: uninstall $(NAME)
-	mkdir -p $(INSTALLDIR)
+	install -d -m 755 $(INSTALLDIR)
 	cp -r $(OUTDIR)/$(NAME)/* $(INSTALLDIR)
-	chown -R root:root $(INSTALLDIR)/$(THEMENAME)-*/gtk-*/
-	chmod -R u=rwX,go=rX $(INSTALLDIR)/$(THEMENAME)-*/gtk-*/
+	chown -R root:root $(INSTALLDIR)/$(THEMENAME)-xfwm4-*/
+	chmod -R u=rwX,go=rX $(INSTALLDIR)/$(THEMENAME)-xfwm4-*/
 
 uninstall:
 	rm -Rf $(INSTALLDIR)/$(THEMENAME)-xfwm4-*/
@@ -22,3 +22,7 @@ uninstall:
 clean:
 	rm -Rf $(OUTDIR)/$(NAME)
 
+togit:
+	git add .
+	git commit -m "Updated from makefile"
+	git push origin
