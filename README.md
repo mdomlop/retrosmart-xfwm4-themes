@@ -1,4 +1,4 @@
-![retrosmart-preview](https://raw.githubusercontent.com/manueldl/retrosmart-xfwm4-themes/master/preview.png "Retrosmart look")
+![retrosmart-preview](https://raw.githubusercontent.com/mdomlop/retrosmart-xfwm4-themes/master/preview.png "Retrosmart look")
 
 Retrosmart XFWM4 themes
 =======================
