@@ -1,28 +1,12 @@
-THEMENAME='retrosmart'
-SUFFIX='-xfwm4-themes'
-NAME=$(THEMENAME)$(SUFFIX)
-SRCDIR='src'
-OUTDIR='.'
-PREFIX='/usr'
-INSTALLDIR=$(PREFIX)'/share/themes'
-
-$(NAME): clean
-	mkdir $(OUTDIR)/$(NAME)
-	cp -r $(SRCDIR)/$(THEMENAME)-*/ $(OUTDIR)/$(NAME)/
-
-install: uninstall $(NAME)
-	install -d -m 755 $(INSTALLDIR)
-	cp -r $(OUTDIR)/$(NAME)/* $(INSTALLDIR)
-	chown -R root:root $(INSTALLDIR)/$(THEMENAME)-xfwm4-*/
-	chmod -R u=rwX,go=rX $(INSTALLDIR)/$(THEMENAME)-xfwm4-*/
-
-uninstall:
-	rm -Rf $(INSTALLDIR)/$(THEMENAME)-xfwm4-*/
-
-clean:
-	rm -Rf $(OUTDIR)/$(NAME)
-
-togit:
-	git add .
-	git commit -m "Updated from makefile"
-	git push origin
+include makefile.mk
+AUTHORS.md: AUTHORS
+	@cat AUTHORS > AUTHORS.md
+INSTALL.md: INSTALL
+	@cat INSTALL > INSTALL.md
+README.md: README
+	@cat README > README.md
+update-preview: preview.png README
+	@echo ![retrosmart-preview]\(https://raw.githubusercontent.com/mdomlop/retrosmart-xfwm4-themes/master/preview.png \"Retrosmart look\"\) > README.md
+	@echo >> README.md
+	@cat README >> README.md
+doc: AUTHORS.md INSTALL.md README.md

@@ -1,0 +1,18 @@
+button_offset=2
+button_spacing=0
+full_width_title=true
+show_app_icon=false
+title_horizontal_offset=5
+title_vertical_offset_active=1
+title_vertical_offset_inactive=1
+# button_layout :
+#    O = Option menu
+#    T = Stick
+#    H = hide
+#    S = shade
+#    M = maximize
+#    C = close
+#    | = title
+button_layout=OST|HMC
+active_text_color=white
+inactive_text_color=black
