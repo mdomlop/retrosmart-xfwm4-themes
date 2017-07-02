@@ -1,0 +1,40 @@
+# Maintainer: Manuel Domínguez López <mdomlop at gmail dot com>
+
+_pkgver_year=2017
+_pkgver_month=01
+_pkgver_day=08
+
+_gitname=retrosmart-xfwm4-themes
+pkgname=${_gitname}-git
+pkgver=41
+pkgrel=1
+pkgdesc="Retrosmart XFwm4 themes."
+url="https://github.com/mdomlop/${_gitname}.git"
+source=("${_gitname}.tar")
+md5sums=('SKIP')
+license=('GPL3')
+makedepends=('git')
+optdepends=('retrosmart-gtk-themes: The corresponding GTK themes'
+            'retrosmart-openbox-themes: The corresponding Openbox themes'
+            'retrosmart-wallpapers: The corresponding backgrounds project'
+            'retrosmart-x11-cursors: The corresponding X11 cursor theme'
+            'retrosmart-icon-theme: The corresponding icon theme')
+arch=('any')
+group=('retrosmart')
+provides=($_gitname)
+
+pkgver() {
+  cd ${srcdir}/${_gitname}
+  git rev-list --count HEAD
+}
+
+build() {
+    cd "${srcdir}/${_gitname}"
+    ./configure
+    make
+    }
+
+package() {
+    cd "${srcdir}/${_gitname}"
+    make install PREFIX=${pkgdir}/usr
+}
