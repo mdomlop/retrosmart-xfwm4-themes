@@ -23,4 +23,4 @@ Install instructions
 
 - And then install:
 
-        # pacman -U retrosmart-xfwm4-theme-*.pkg.xz
+        # pacman -U retrosmart-*.pkg.xz

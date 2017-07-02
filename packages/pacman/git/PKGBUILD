@@ -4,7 +4,7 @@ _pkgver_year=2017
 _pkgver_month=01
 _pkgver_day=08
 
-_pkgname=retrosmart-icon-theme
+_pkgname=retrosmart-xfwm4-themes
 pkgver=41
 pkgname=${_pkgname}-${pkgver}
 pkgrel=1

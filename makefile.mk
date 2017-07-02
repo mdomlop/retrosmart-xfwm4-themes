@@ -25,7 +25,8 @@ clean:
 	rm -rf $(NAME)-* /tmp/tmp.*.$(NAME)
 
 purge: clean
-	rm -f *.md
+	rm -f *.md makefile
+	@echo makefile deleted. Execute configure script to generate it again.
 
 togit: purge doc
 	git add .
