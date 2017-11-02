@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 name='retrosmart-xfwm4-themes'
 docs=(AUTHORS CREDITS INSTALL README)
