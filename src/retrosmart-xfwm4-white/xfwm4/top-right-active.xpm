@@ -1,10 +1,8 @@
 /* XPM */
-static char *top_right_active[] = {
-/* columns rows colors chars-per-pixel */
-"10 26 2 1 ",
-"  c black",
-". c #ffffff",
-/* pixels */
+static char * top_right_active_xpm[] = {
+"10 32 2 1",
+" 	c #000000",
+".	c #ffffff",
 "          ",
 "......... ",
 "......... ",
@@ -30,5 +28,10 @@ static char *top_right_active[] = {
 "......... ",
 "......... ",
 "......... ",
-"      ... "
-};
+"......... ",
+"......... ",
+"......... ",
+"......... ",
+"......... ",
+"......... ",
+"      ... "};
