@@ -26,11 +26,19 @@ uninstall:
 	rm -rf $(PREFIX)/share/doc/$(EXECUTABLE_NAME)/
 
 clean:
-	rm -rf $(BASE)-* $(EXECUTABLE_NAME)-*.pkg.tar.xz
+	rm -rf $(BASE)-*
 
 arch_pkg: ChangeLog
 	makepkg -d
 
-ocs: clean
-	for i in $(BASE)-*/; do tar cJf $$i.tar.xz $$i; done
+ocs: $(EXECUTABLE_NAME).tar.xz
+$(EXECUTABLE_NAME).tar.xz:
+	cd src/; tar cJf ../$(EXECUTABLE_NAME).tar.xz $(BASE)-*
+
+user_install:
+	mkdir -p ~/.themes/
+	cp -r src/$(BASE)-*/ ~/.themes/
+
+user_uninstall:
+	rm -rf ~/.themes/$(BASE)-*/
 
